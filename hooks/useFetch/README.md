@@ -1,26 +1,10 @@
-# useForm
+# useFetch
 
-**Description:** control the value of the components of a from component.
+**Description:** fetch data from an url. (HTTP Get)
 
 
 ```js
-    const initialForm = {
-        name: '',
-        age: 0,
-        email: ''
-    };
-    
-    const [ formValues, handleInputChange, reset ] = useForm( initialForm );
+    const url = 'http://endpoint';
+    const { data, loading, error } = useFetch(url);
 ```
 
-```html
-    <form>
-        <input 
-            ...
-            name="email"
-            value={email}
-            onChange={ handleInputChange }                    
-        />
-        ...
-    </form>
-```
