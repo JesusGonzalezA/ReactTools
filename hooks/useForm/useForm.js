@@ -6,17 +6,18 @@ export const useForm = (initialState = {}) => {
 
     const [values, setValues] = useState(initialState);
 
-    const reset = ( newFormState = initialState ) => {
-        setValues( newFormState );
+    const reset = () => {
+        setValues(initialState);
     }
 
     const handleInputChange = ({
         target
     }) => {
-
         setValues({
             ...values,
-            [target.name]: target.value
+            [target.name]: (target.type === 'checkbox') 
+                ? target.checked 
+                : target.value
         });
     };
 
